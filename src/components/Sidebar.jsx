@@ -2,14 +2,12 @@ import { useState } from "react";
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: "Chart_fill" },
-    { title: "Inbox", src: "Chat" },
-    { title: "Accounts", src: "User", gap: true },
-    { title: "Schedule ", src: "Calendar" },
-    { title: "Search", src: "Search" },
-    { title: "Analytics", src: "Chart" },
-    { title: "Files ", src: "Folder", gap: true },
-    { title: "Setting", src: "Setting" },
+    { title: "DASHBOARD", src: "Dashboard" },
+    { title: "BROWSE CHURCH ", src: "Browse Church" },
+    { title: "ONLINE DISCIPLESHIP", src: "OnlineDisc" },
+    { title: "MANAGE ACCOUNT", src: "ManageAccount" },
+    { title: "SIGNOUT", src: "Search" },
+
   ];
 
   return (
@@ -56,9 +54,6 @@ const Sidebar = () => {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="h-screen flex-1 p-7">
-        <h1 className="text-2xl font-semibold ">Home Page</h1>
       </div>
     </div>
   );

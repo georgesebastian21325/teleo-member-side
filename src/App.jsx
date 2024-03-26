@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login'
 import CreateAcc from './pages/CreateAcc'
@@ -7,13 +8,12 @@ import OnlineDisc from './pages/OnlineDisc'
 import ManageAcc from './pages/ManageAcc'
 import Error404 from './pages/Error404'
 
-
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />}/>
+          <Route index element={<Login />}/>
           <Route path="/create" element={<CreateAcc />}/>
           <Route path="/dash" element={<Dashboard />}/>
           <Route path="/browse" element={<BrowseChurch />}/>
