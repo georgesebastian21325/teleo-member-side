@@ -1,61 +1,50 @@
-import { useState } from "react";
-const Sidebar = () => {
-  const [open, setOpen] = useState(true);
-  const Menus = [
-    { title: "DASHBOARD", src: "Dashboard" },
-    { title: "BROWSE CHURCH ", src: "Browse Church" },
-    { title: "ONLINE DISCIPLESHIP", src: "OnlineDisc" },
-    { title: "MANAGE ACCOUNT", src: "ManageAccount" },
-    { title: "SIGNOUT", src: "Search" },
+import React from 'react'
+import classNames from 'classnames'
+import { Link, useLocation } from 'react-router-dom'
+import { FcBullish } from 'react-icons/fc'
+import { HiOutlineLogout } from 'react-icons/hi'
+import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants'
+import ImgPlaceHolder from '../assets/img-place-holder.png'
 
-  ];
+const linkClass =
+	'flex items-center gap-2 font-light px-3 py-2 hover:bg-neutral-700 hover:no-underline active:bg-neutral-600 rounded-sm text-base'
 
-  return (
-    <div className="flex">
-      <div
-        className={` ${
-          open ? "w-72" : "w-20 "
-        } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
-      >
-        <img
-          src="./src/assets/control.png"
-          className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
-           border-2 rounded-full  ${!open && "rotate-180"}`}
-          onClick={() => setOpen(!open)}
-        />
-        <div className="flex gap-x-4 items-center">
-          <img
-            src="./src/assets/logo.png"
-            className={`cursor-pointer duration-500 ${
-              open && "rotate-[360deg]"
-            }`}
-          />
-          <h1
-            className={`text-white origin-left font-medium text-xl duration-200 ${
-              !open && "scale-0"
-            }`}
-          >
-            Designer
-          </h1>
-        </div>
-        <ul className="pt-6">
-          {Menus.map((Menu, index) => (
-            <li
-              key={index}
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "bg-light-white"
-              } `}
-            >
-              <img src={`./src/assets/${Menu.src}.png`} />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                {Menu.title}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
-export default Sidebar;
+export default function Sidebar() {
+	return (
+		<div className="bg-gradient-to-t from-red-900 via-slate-900 to-sky-900 h-screen w-60 p-3 flex-col hidden lg:block">
+			<div className="flex flex-col items-center py-3">
+				<div className='flex flex-col mr-2 items-center mt-10'>
+					<img src={ImgPlaceHolder} alt="" />
+					<span className="text-neutral-200 text-lg">Every Nation</span>
+				</div>
+			</div>
+			<div className="py-8 flex flex-1 flex-col gap-3 mt-12">
+				{DASHBOARD_SIDEBAR_LINKS.map((link) => (
+					<SidebarLink key={link.key} link={link} />
+				))}
+			</div>
+		</div>
+	)
+}
+
+function SidebarLink({ link }) {
+	const { pathname } = useLocation()
+
+	return (
+		<Link
+			to={link.path}
+			className={classNames(
+				'flex items-center p-2 space-x-2 rounded-md transition-colors duration-200',
+				{
+					'bg-neutral-700 text-white': pathname === link.path && link.key !== 'sign-out',
+					'text-red-500': link.key === 'sign-out',
+					'text-neutral-400': pathname !== link.path && link.key !== 'sign-out',
+				},
+				link.linkClass
+			)}
+		>
+			<span className="text-xl">{link.icon}</span>
+			<span className="text-sm">{link.label}</span>
+		</Link>
+	)
+}
