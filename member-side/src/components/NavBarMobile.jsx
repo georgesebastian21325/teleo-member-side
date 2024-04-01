@@ -1,85 +1,68 @@
 import { useState } from "react";
-
-
-import { MdOutlineDashboard } from "react-icons/md";
+import { HiMenu } from "react-icons/hi";
+import { MdOutlineDashboard, MdOutlineManageAccounts } from "react-icons/md";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { TbBible } from "react-icons/tb";
-import { MdOutlineManageAccounts } from "react-icons/md";
 import { GoSignOut } from "react-icons/go";
+import { motion } from "framer-motion";
 
-export default function NavBarMobile() {
+export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  return (
-    <div className="md:hidden">
-      <nav>
-        <div className="max-w-7xl mx-auto shadow">
-          <div className="flex mx-auto justify-between w-[90%]">
-            {/* Primary menu and logo */}
-            <div className="flex items-center gap-12 my-5">
-              {/* logo */}
-              <div>
-                <a href="/" className="flex font-bold text-black items-center">
-                  <span>Teleo</span>
-                </a>
-              </div>
-            </div>
-            {/* secondary */}
-            <div className="flex gap-9">
-              <div className="lg:hidden flex items-center">
-                <button onClick={() => setToggleMenu(!toggleMenu)}>
+  // Toggle the mobile menu
+  const toggle = () => {
+    setToggleMenu(!toggleMenu);
+  };
 
-                </button>
-              </div>
-            </div>
+  // Define menu items
+  const menuItems = [
+    { href: "/dash", icon: <MdOutlineDashboard />, text: "Dashboard" },
+    { href: "/create", icon: <FaRegCalendarAlt />, text: "Create Event" },
+    { href: "/disc", icon: <TbBible />, text: "Online Discipleship" },
+    { href: "/manage", icon: <MdOutlineManageAccounts />, text: "Manage Account" },
+    { href: "/sign-out", icon: <GoSignOut />, text: "Sign Out" }
+  ];
+
+  return (
+    <div>
+      <nav className="shadow">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <a href="/" className="flex items-center font-bold text-black">
+              <span>Teleo</span>
+            </a>
+            {/* Hamburger Menu Button (visible across all sizes) */}
+            <button onClick={toggle} className="text-2xl">
+              <HiMenu />
+            </button>
           </div>
         </div>
-        {/* mobile navigation */}
-        <div
-          className={`fixed z-40 w-full  bg-gray-100 overflow-hidden flex flex-col lg:hidden gap-12  origin-top duration-700 ${
-            !toggleMenu ? "h-0" : "h-full"
-          }`}
-        >
-          <div className="px-8">
-            <div className="flex flex-col gap-6 font-semibold tracking-wider mt-3 text-[0.9rem]">
-              <div className="flex flex-row items-center gap-2">
-                <MdOutlineDashboard />
-                <a href="/" className="text-black">
-                  {" "}
-                  Dashboard{" "}
-                </a>
-              </div>
-              <div className="flex flex-row items-center gap-2">
-                <FaRegCalendarAlt />
-                <a href="/create-event" className="text-black">
-                  {" "}
-                  Create Event{" "}
-                </a>
-              </div>
-              <div className="flex flex-row items-center gap-2">
-                <TbBible />
-                <a href="/online-discipleship" className="text-black">
-                  {" "}
-                  Online Discipleship{" "}
-                </a>
-              </div>
-              <div className="flex flex-row items-center gap-2">
-                <MdOutlineManageAccounts />
-                <a href="/manage-account" className="text-black">
-                  {" "}
-                  Manage Account{" "}
-                </a>
-              </div>
-              <div className="flex flex-row items-center gap-2">
-                <GoSignOut />
-                <a href="/sign-out" className="text-black">
-                  {" "}
-                  Sign Out{" "}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Collapsible Navigation Menu (hamburger style, for all sizes) */}
+        {toggleMenu && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="absolute z-40 w-full bg-gray-100 px-4 sm:px-6 lg:px-8 pb-4 pt-2"
+          >
+            {menuItems.map((item, index) => (
+              <motion.a
+                key={index}
+                href={item.href}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1 * index, duration: 0.5 }}
+                className="block py-2 text-lg font-semibold text-black hover:text-blue-500"
+              >
+                <div className="flex items-center gap-2">
+                  {item.icon}
+                  <span>{item.text}</span>
+                </div>
+              </motion.a>
+            ))}
+          </motion.div>
+        )}
       </nav>
     </div>
   );
