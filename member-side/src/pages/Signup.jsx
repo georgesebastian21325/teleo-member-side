@@ -199,7 +199,7 @@ export default function SignUp() {
           >
             {" "}
             Already have an account?{" "}
-            <Link to="/login" className="underline">
+            <Link to="/" className="underline">
               {" "}
               Login
             </Link>
