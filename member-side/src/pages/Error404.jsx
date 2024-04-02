@@ -18,10 +18,10 @@ const Error404 = () => {
       <h1 className="text-9xl md:text-[12rem] lg:text-[15rem] xl:text-[18rem] 2xl:text-[20rem] font-extrabold">
         404
       </h1>
-      <p className="mt-2 text-xl md:text-2xl px-6 text-center">
+      <p className="mt-2 mx-20 text-xl md:text-2xl px-6 text-center">
         Oops! The page you are looking for was moved, removed, renamed, or might never have existed.
       </p>
-      <Link to="/" className="mt-8 px-8 py-4 bg-white text-cyan-500 rounded-full shadow hover:scale-110 transition-transform duration-300 ease-in-out">
+      <Link to="/" className="mt-5 px-8 py-4 bg-white text-cyan-500 rounded-full shadow hover:scale-110 transition-transform duration-300 ease-in-out">
         Go Back to Dashboard!
       </Link>
       <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">

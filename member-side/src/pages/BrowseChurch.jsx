@@ -24,7 +24,7 @@ const ButtonGroup = ({ children }) => {
         className="grid grid-cols-3 gap-5 sm:grid-cols-3 sm:gap-5 sm:space-x-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 3.5 }}
+        transition={{ duration: 1 }}
       >
         {children}
       </motion.div>
@@ -45,11 +45,11 @@ const ButtonSearch = () => {
 const ChurchCard = ({ name, location, serviceTimes }) => {
   return (
     <motion.div
-      className="flex mt-8 items-center bg-white rounded-lg shadow-lg p-4"
+      className="flex mt-8 items-center bg-white rounded-2xl shadow-lg p-4"
       initial={{ x: -200, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      whileHover={{ scale: 0.8, transition: { duration: 0.3, type: "spring" } }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 0.8, transition: { duration: 0.2, type: "spring" } }}
     >
       <img src="/path-to-your-logo.png" alt="Church Logo" className="w-24 h-24 mr-4" />
       <div>
@@ -67,6 +67,9 @@ const BrowseChurch = () => {
     { name: "Second Church", location: "City, Country", serviceTimes: "Sundays at 10:30 AM" },
     { name: "Third Church", location: "City, Country", serviceTimes: "Saturdays at 5:00 PM" },
     { name: "Fourth Church", location: "City, Country", serviceTimes: "Sundays at 11:00 AM" },
+    { name: "Fifth Church", location: "City, Country", serviceTimes: "Sundays at 12:00 PM" },
+    { name: "Sixth Church", location: "City, Country", serviceTimes: "Sundays at 1:00 PM" },
+    { name: "Seventh Church", location: "City, Country", serviceTimes: "Monday at 12:00 PM" },
   ];
 
   return (
@@ -76,7 +79,7 @@ const BrowseChurch = () => {
         className="flex items-center bg-white rounded-lg border-2 shadow mt-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 1 }}
       >
         <motion.input
           className="flex-grow p-2 rounded-l-md focus:border-blue-500 focus:outline-none"
