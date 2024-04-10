@@ -168,14 +168,14 @@ export default function SignUp() {
           )}
           <div className="flex gap-2">
             {" "}
-            <Link to="/choose-account">
+            <Link to="/LoginForm">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-black text-white py-2 px-5 rounded-md mt-[1rem] font-semibold"
               >
                 {" "}
-                <Link to="/choose-account" className="text-white">
+                <Link to="/LoginForm" className="text-white">
                   GO BACK
                 </Link>
               </motion.button>

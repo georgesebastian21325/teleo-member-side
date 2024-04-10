@@ -5,7 +5,7 @@ import ChurchLogo from "../assets/teleo-logo.png"; // Importing the logo
 
 const Footer = () => {
   return (
-    <footer className="py-4 border-t-4 border-gray-600">
+    <footer className="py-4 border-t-2 border-gray-600"> {/* Changed border-t-4 to border-t */}
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-center px-10 text-center">
           <div className="mb-4 lg:mb-0 lg:mt-0 flex flex-col lg:flex-row items-center justify-center text-center">

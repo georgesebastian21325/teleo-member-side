@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import BrowseChurch from "./pages/BrowseChurch";
 import OnlineDisc from "./pages/OnlineDisc";
 import ManageAcc from "./pages/ManageAcc";
+import LandingPage from "./pages/LandingPage";
 import Error404 from "./pages/Error404";
 import LoadingScreen from "./components/Loading";
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/landing" element={<LandingPage />} />
         <Route path="/dash" element={<Dashboard />} />
         <Route path="/browse" element={<BrowseChurch />} />
         <Route path="/disc" element={<OnlineDisc />} />
