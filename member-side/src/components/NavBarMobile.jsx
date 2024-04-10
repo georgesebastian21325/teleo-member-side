@@ -5,6 +5,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { TbBible } from "react-icons/tb";
 import { GoSignOut } from "react-icons/go";
 import { motion } from "framer-motion";
+import ChurchLogo from "../assets/teleo-logo.png";
 
 export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -27,12 +28,18 @@ export default function NavBar() {
     <div>
       <nav className="shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <a href="/" className="flex items-center font-bold text-black">
-              <span>Teleo</span>
-            </a>
-            {/* Hamburger Menu Button (visible across all sizes) */}
+          <div className="flex items-center py-4 justify-between">
+            {/* Logo on the left */}
+            <div className="flex items-center">
+              <a href="/" className="flex items-center">
+                <img src={ChurchLogo} alt="Church Logo" className="h-9 w-auto" />
+              </a>
+            </div>
+            {/* Middle text "TELEO" */}
+            <div className="text-center text-2xl font-bold flex-grow">
+              TELEO
+            </div>
+            {/* Hamburger Menu Button on the right */}
             <button onClick={toggle} className="text-2xl">
               <HiMenu />
             </button>

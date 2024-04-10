@@ -1,6 +1,8 @@
 import React from 'react';
 import Sidebar from "../components/Sidebar";
 import NavBarMobile from "../components/NavBarMobile";
+import Footer from "../components/Footer";
+
 
 const OnlineDisc = () => {
   return (
@@ -24,34 +26,7 @@ const OnlineDisc = () => {
         <button className="mb-4 px-6 py-2 bg-blue-600 text-white rounded-md shadow-md">Back to main page</button>
         <button className="px-6 py-2 bg-green-600 text-white rounded-md shadow-md">Churches near me</button>
       </main>
-
-      {/* Footer */}
-      <footer className="p-4 bg-white shadow-md">
-        <div className="flex justify-between">
-          <div>
-            <p className="font-bold">TELEO</p>
-            <p>+93-112-456-457</p>
-            <p>support@teleo.com</p>
-          </div>
-          <div>
-            {/* Social media icons would be linked here */}
-            <a href="#!" className="mr-2">Facebook</a>
-            <a href="#!" className="mr-2">Instagram</a>
-            <a href="#!" className="mr-2">Other</a>
-          </div>
-        </div>
-        <div className="flex justify-between mt-4">
-          <div className="flex">
-            <a href="#!" className="mr-2">Privacy Policy</a>
-            <a href="#!">Terms and Conditions</a>
-          </div>
-          <div className="flex">
-            {/* App store links would go here */}
-            <a href="#!" className="mr-2">Google Play</a>
-            <a href="#!">App Store</a>
-          </div>
-        </div>
-      </footer>
+    <Footer />
     </div>
   );
 }
