@@ -21,7 +21,7 @@ const Error404 = () => {
       <p className="mt-2 mx-20 lg:text-xl px-2 text-center md:text-2xl px-6 text-center">
         Oops! The page you are looking for was moved, removed, renamed, or might never have existed.
       </p>
-      <Link to="/" className="mt-5 px-6 py-3 bg-white text-cyan-500 rounded-full shadow hover:scale-110 transition-transform duration-300 ease-in-out">
+      <Link to="/dash" className="mt-5 px-6 py-3 bg-white text-cyan-500 rounded-full shadow hover:scale-110 transition-transform duration-300 ease-in-out">
         Go Back to Dashboard!
       </Link>
       <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">

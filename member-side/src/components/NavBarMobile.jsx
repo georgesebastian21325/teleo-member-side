@@ -4,6 +4,7 @@ import { MdOutlineDashboard, MdOutlineManageAccounts } from "react-icons/md";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { TbBible } from "react-icons/tb";
 import { GoSignOut } from "react-icons/go";
+import { CgBrowse } from "react-icons/cg";
 import { motion } from "framer-motion";
 import ChurchLogo from "../assets/teleo-logo.png";
 
@@ -18,10 +19,10 @@ export default function NavBar() {
   // Define menu items
   const menuItems = [
     { href: "/dash", icon: <MdOutlineDashboard />, text: "Dashboard" },
-    { href: "/create", icon: <FaRegCalendarAlt />, text: "Create Event" },
+    { href: "/browse", icon: <CgBrowse />, text: "Browse Events" },
     { href: "/disc", icon: <TbBible />, text: "Online Discipleship" },
     { href: "/manage", icon: <MdOutlineManageAccounts />, text: "Manage Account" },
-    { href: "/sign-out", icon: <GoSignOut />, text: "Sign Out" }
+    { href: "/", icon: <GoSignOut />, text: "Sign Out" }
   ];
 
   return (
@@ -31,7 +32,7 @@ export default function NavBar() {
           <div className="flex items-center py-4 justify-between">
             {/* Logo on the left */}
             <div className="flex items-center">
-              <a href="/" className="flex items-center">
+              <a href="/dash" className="flex items-center">
                 <img src={ChurchLogo} alt="Church Logo" className="h-9 w-auto" />
               </a>
             </div>

@@ -73,36 +73,38 @@ const BrowseChurch = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <>
       <NavBarMobile />
-      <motion.div
-        className="flex items-center bg-white rounded-lg border-2 shadow mt-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.input
-          className="flex-grow p-2 rounded-l-md focus:border-blue-500 focus:outline-none"
-          id="search"
-          type="text"
-          placeholder="What are you searching for?"
+      <div className="min-h-screen bg-gray-100 p-4">
+        <motion.div
+          className="flex items-center bg-white rounded-lg border-2 shadow mt-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 3 }}
-        />
-        <ButtonSearch />
-      </motion.div>
+          transition={{ duration: 1 }}
+        >
+          <motion.input
+            className="flex-grow p-2 rounded-l-md focus:border-blue-500 focus:outline-none"
+            id="search"
+            type="text"
+            placeholder="What are you searching for?"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3 }}
+          />
+          <ButtonSearch />
+        </motion.div>
 
-      <ButtonGroup>
-        <Button>Seminar</Button>
-        <Button>Discipleship</Button>
-        <Button>Retreat</Button>
-      </ButtonGroup>
+        <ButtonGroup>
+          <Button>Seminar</Button>
+          <Button>Discipleship</Button>
+          <Button>Retreat</Button>
+        </ButtonGroup>
 
-      {churches.map((church, index) => (
-        <ChurchCard key={index} name={church.name} location={church.location} serviceTimes={church.serviceTimes} />
-      ))}
-    </div>
+        {churches.map((church, index) => (
+          <ChurchCard key={index} name={church.name} location={church.location} serviceTimes={church.serviceTimes} />
+        ))}
+      </div>
+    </>
   );
 };
 
