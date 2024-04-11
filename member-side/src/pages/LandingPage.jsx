@@ -1,13 +1,12 @@
-import Sidebar from "../components/Sidebar";
-import NavBarMobile from "../components/NavBarMobile";
+import NavBarLanding from "../components/NavBarLanding";
+import Footer from "../components/Footer";
 
 
 const LandingPage = () => {
     return(
         <>
-            <Sidebar />
-            <NavBarMobile />
-
+            <NavBarLanding />
+            <Footer />
         </>
     )
 }

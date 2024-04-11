@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HiMenu } from "react-icons/hi";
 import { MdOutlineDashboard, MdOutlineManageAccounts } from "react-icons/md";
-import { FaRegCalendarAlt } from "react-icons/fa";
+import { PiChurch } from "react-icons/pi";
 import { TbBible } from "react-icons/tb";
 import { GoSignOut } from "react-icons/go";
 import { CgBrowse } from "react-icons/cg";
@@ -19,6 +19,7 @@ export default function NavBar() {
   // Define menu items
   const menuItems = [
     { href: "/dash", icon: <MdOutlineDashboard />, text: "Dashboard" },
+    { href: "/church", icon: <PiChurch />, text: "Browse Church" },
     { href: "/browse", icon: <CgBrowse />, text: "Browse Events" },
     { href: "/disc", icon: <TbBible />, text: "Online Discipleship" },
     { href: "/manage", icon: <MdOutlineManageAccounts />, text: "Manage Account" },
