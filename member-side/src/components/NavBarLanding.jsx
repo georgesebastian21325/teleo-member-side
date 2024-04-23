@@ -18,7 +18,7 @@ export default function NavBar() {
             </div>
             <div className="hidden sm:block"> {/* Hide on small screens */}
               <button onClick={toggle} className="text-2xl"></button>
-              <button className="rounded-full border border-gray-500 bg-black px-6 py-2 mt-3 text-white hover:text-white focus:outline-none focus:border-gray-700 text-center">Log In</button>
+              <a href="/login" className="rounded-full border border-gray-500 bg-black px-6 py-2 mt-3 text-white hover:text-black hover:bg-white hover:border-black focus:outline-none focus:border-gray-700 text-center transition-all duration-300">Log In</a>
             </div>
           </div>
         </div>
