@@ -31,7 +31,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="mb-4 mt-5 lg:mb-9">
+          <div className="mb-4 mt-3 lg:mb-9">
             <h2 className="text-2xl lg:text-4xl font-semibold mb-2 text-black">INFORMATION</h2>
             <div className="flex flex-col lg:flex-row lg:justify-start space-y-2 lg:space-y-0 lg:space-x-4">
               <a href="#!" className="text-sm lg:text-lg text-gray-800 hover:text-black">
