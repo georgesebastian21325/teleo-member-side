@@ -175,7 +175,7 @@ export default function SignUp() {
                 className="bg-black text-white py-2 px-5 rounded-md mt-[1rem] font-semibold"
               >
                 {" "}
-                <Link to="/LoginForm" className="text-white">
+                <Link to="/" className="text-white">
                   GO BACK
                 </Link>
               </motion.button>

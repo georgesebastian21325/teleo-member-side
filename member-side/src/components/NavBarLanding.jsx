@@ -11,14 +11,14 @@ export default function NavBar() {
   return (
     <div>
       <nav>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-11/12 mt-3 mx-auto sm:px-6 lg:px-8">
           <div className="flex items-center py-4 justify-between">
-            <div className="text-initial text-2xl font-bold flex-grow">
+            <div className="text-initial text-3xl font-bold flex-grow">
               TELEO
             </div>
             <div className="hidden sm:block"> {/* Hide on small screens */}
               <button onClick={toggle} className="text-2xl"></button>
-              <button className="rounded-full border border-gray-500 bg-black px-6 py-0.5 mt-3 text-white hover:text-white focus:outline-none focus:border-gray-700 text-center">Log In</button>
+              <a href="/" className="rounded-full border border-gray-500 bg-black px-6 py-2 mt-3 text-white hover:text-black hover:bg-white hover:border-black focus:outline-none focus:border-gray-700 text-center transition-all duration-300">Log In</a>
             </div>
           </div>
         </div>
