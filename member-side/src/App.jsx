@@ -10,6 +10,11 @@ import LandingPage from "./pages/LandingPage";
 import Error404 from "./pages/Error404";
 import LoadingScreen from "./components/Loading";
 import BrowseChurch from "./pages/BrowseChurch";
+import Profile from "./pages/Profile";
+import Security from "./pages/Security";
+import Notification from "./pages/Notification";
+
+
 
 function App() {
   return (
@@ -17,6 +22,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/security' element={<Security />} />
+        <Route path='/notif' element={<Notification />} />
         <Route path="/landing" element={<LandingPage />} />
         <Route path="/dash" element={<Dashboard />} />
         <Route path="/browse" element={<BrowseEvents />} />
@@ -25,6 +33,7 @@ function App() {
         <Route path="/manage" element={<ManageAcc />} />
         <Route path="/loading" element={<LoadingScreen />} />
         <Route path="*" element={<Error404 />} />
+       
       </Routes>
     </BrowserRouter>
   );
