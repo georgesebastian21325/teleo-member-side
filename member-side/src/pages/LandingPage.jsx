@@ -72,18 +72,46 @@ const Testimonials = () => {
     };
 
     return (
-        <div className="py-8 px-12 relative">
-            <div className="flex justify-between items-center mb-6">
-                <h2 className="text-4xl font-bold">TESTIMONIALS</h2>
-                <div className="flex items-center">
-                    <motion.button aria-label="Previous" onClick={handlePrev} whileTap={{ scale: 0.9 }} className="mr-2 focus:outline-none">
+        <div className="py-12 px-16 relative">
+            <div className="flex justify-between items-center mb-6 px-10">
+                <h2 className="text-4xl font-bold" style={{ left: '200px', position: 'absolute', top: '0' }}>TESTIMONIALS</h2>
+                <div style={{ position: 'absolute', right: '298px', top: '0' }}>
+                    <motion.button 
+                        aria-label="Previous" 
+                        onClick={handlePrev} 
+                        whileTap={{ scale: 0.9 }} 
+                        style={{ 
+                            marginRight: '10px', // Space between buttons
+                            width: '30px', 
+                            height: '30px', 
+                            borderRadius: '50%', 
+                            border: '2px solid #000', 
+                            backgroundColor: 'transparent', 
+                            zIndex: '2' 
+                        }} 
+                        className="focus:outline-none"
+                    >
                         <span>&lt;</span>
                     </motion.button>
-                    <motion.button aria-label="Next" onClick={handleNext} whileTap={{ scale: 0.9 }} className="focus:outline-none">
+                    <motion.button 
+                        aria-label="Next" 
+                        onClick={handleNext} 
+                        whileTap={{ scale: 0.9 }} 
+                        style={{ 
+                            width: '30px', 
+                            height: '30px', 
+                            borderRadius: '50%', 
+                            border: '2px solid #000', 
+                            backgroundColor: 'transparent', 
+                            zIndex: '2' 
+                        }} 
+                        className="focus:outline-none"
+                    >
                         <span>&gt;</span>
                     </motion.button>
                 </div>
             </div>
+    
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {testimonials.slice(index, index + itemsPerPage).map((testimonial, i) => (
                     <TestimonialCard key={i} {...testimonial} />
@@ -152,9 +180,9 @@ const SectionWithImage = ({ title, text, imageSrc, imageAlt, reverse }) => {
 
     return (
         <div style={{ height: '600px', margin: '50px 0', display: 'grid', gridTemplateRows: '50px 500px 100px', gridTemplateColumns: '1fr 30px 30px 30px 30px 30px 1fr', alignItems: 'center', justifyItems: 'center', position: 'relative' }}>
-            <h2 className="text-4xl font-bold" style={{ gridColumn: '1 / 3', textAlign: 'center', position: 'absolute', top: '0' }}>FEATURED NEWS</h2>
-            <button aria-label="Previous" onClick={handlePrev} style={{ gridColumn: '2', gridRow: '1', alignSelf: 'center', position: 'absolute', top: '0', marginLeft: '20px', width: '30px', height: '30px', borderRadius: '50%', border: '2px solid #000', backgroundColor: 'transparent', zIndex: '2' }} className="mr-5">&lt;</button>
-            <button aria-label="Next" onClick={handleNext} style={{ gridColumn: '3', gridRow: '1', alignSelf: 'center', position: 'absolute', top: '0', width: '30px', height: '30px', borderRadius: '50%', border: '2px solid #000', backgroundColor: 'transparent', zIndex: '2', marginLeft: '40px' }}>&gt;</button>
+            <h2 className="text-4xl font-bold" style={{ gridColumn: '1 / 2', textAlign: 'left', position: 'absolute', top: '0' }}>FEATURED NEWS</h2>
+            <button aria-label="Previous" onClick={handlePrev} style={{ gridColumn: '6', gridRow: '1', alignSelf: 'center', position: 'absolute', top: '0', marginLeft: '20px', width: '30px', height: '30px', borderRadius: '50%', border: '2px solid #000', backgroundColor: 'transparent', zIndex: '2' }} className="mr-5">&lt;</button>
+            <button aria-label="Next" onClick={handleNext} style={{ gridColumn: '7', gridRow: '1', alignSelf: 'center', position: 'absolute', top: '0', width: '30px', height: '30px', borderRadius: '50%', border: '2px solid #000', backgroundColor: 'transparent', zIndex: '2', marginLeft: '40px' }}>&gt;</button>
             <main id="carousel" style={{ gridRow: '2 / 3', gridColumn: '1 / 8', width: '100vw', height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', transformStyle: 'preserve-3d', perspective: '600px', pointerEvents: 'none' }}>
                 {newsItems.map((item, index) => (
                     <motion.div

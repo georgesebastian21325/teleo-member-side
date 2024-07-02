@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ChurchLogo from "../assets/teleo-logo.png";
 import NavBarMobile from "../components/NavBarMobile";
 import Footer from "../components/Footer";
+import Sidebar from "../components/Sidebar";
 
 const BrowseChurch = () => {
   const [churches, setChurches] = useState([
